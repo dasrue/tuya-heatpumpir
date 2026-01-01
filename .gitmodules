@@ -1,0 +1,3 @@
+[submodule "arduino-heatpumpir"]
+	path = arduino-heatpumpir
+	url = https://github.com/ToniA/arduino-heatpumpir.git
