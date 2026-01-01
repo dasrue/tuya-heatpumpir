@@ -4,6 +4,6 @@ project(TuyaEncode)
 # Automatically find all .cpp files in the current directory and store them in the 'SOURCES' variable
 file(GLOB HPSOURCES "arduino-heatpumpir/*.cpp")
 
-add_executable(tuyaenc main.cpp Arduino.cpp ${HPSOURCES})
+add_executable(tuyaenc main.cpp Arduino.cpp IRSenderVirt.cpp ${HPSOURCES})
 target_include_directories(tuyaenc PUBLIC "arduino-heatpumpir")
 target_include_directories(tuyaenc PUBLIC ".")
