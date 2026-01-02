@@ -4,3 +4,6 @@
 [submodule "FastLZ"]
 	path = FastLZ
 	url = https://github.com/ariya/FastLZ.git
+[submodule "base64"]
+	path = base64
+	url = https://github.com/tobiaslocker/base64.git
