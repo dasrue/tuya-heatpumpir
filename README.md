@@ -9,7 +9,7 @@ This project uses CMake for building and depends on several git submodules. Ensu
 First, clone the repository with submodules:
 
 ```bash
-git clone --recursive https://github.com/your-repo/tuya-heatpumpir.git
+git clone --recursive https://github.com/dasrue/tuya-heatpumpir.git
 cd tuya-heatpumpir
 ```
 
@@ -59,7 +59,7 @@ tuyaenc <model> <power> <mode> <fan> <temperature> <vertical_vane> <horizontal_v
 
 ### Supported Models
 
-The following heatpump models are supported:
+The following heatpump models are supported (based on [arduino-heatpumpir](https://github.com/ToniA/arduino-heatpumpir)):
 
 - AUX
 - ballu
@@ -129,9 +129,9 @@ The base64 string can be sent directly to a Tuya Zigbee IR blaster device to tra
 
 ## Dependencies
 
-- Arduino Heatpump IR library (included in arduino-heatpumpir/)
-- FastLZ compression library (included in FastLZ/)
-- Base64 encoding library (included in base64/)
+- [Arduino Heatpump IR library](https://github.com/ToniA/arduino-heatpumpir) (included in arduino-heatpumpir/)
+- [FastLZ compression library](https://github.com/ariya/FastLZ/) (included in FastLZ/)
+- [Base64 encoding library](https://github.com/tobiaslocker/base64/) (included in base64/)
 - Standard C++17 libraries
 
 ## License
