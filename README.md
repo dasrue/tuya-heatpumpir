@@ -4,7 +4,24 @@ This program generates base64-encoded IR commands for various heatpump models, c
 
 ## Building
 
-This project uses CMake for building. Ensure you have CMake and a C++17 compatible compiler installed.
+This project uses CMake for building and depends on several git submodules. Ensure you have CMake and a C++17 compatible compiler installed.
+
+First, clone the repository with submodules:
+
+```bash
+git clone --recursive https://github.com/your-repo/tuya-heatpumpir.git
+cd tuya-heatpumpir
+```
+
+Or if you already cloned without submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+Fix the bug in the `IRSenderPWM.cpp` file in the `arduino-heatpumpir` submodule by removing the first line, `IRSenderPWM.cpp`, otherwise the program won't compile
+
+Then build:
 
 ```bash
 mkdir build
