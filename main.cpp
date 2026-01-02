@@ -213,21 +213,21 @@ int main(int argc, char* argv[]) {
     }
 
 
-    std::cout << "Running as " << heatpumpIR->model() << ", info: " << heatpumpIR->info() << std::endl;
+    //std::cout << "Running as " << heatpumpIR->model() << ", info: " << heatpumpIR->info() << std::endl;
 
     heatpumpIR->send(irSender, power, mode, fan, temperature, vvane, hvane);
-    
+
     std::vector<int> pulses = irSender.getPulses();
 
     if (pulses.back() == 0) {
-        std::cout << "Removing trailing zero pulse." << std::endl;
+        //std::cout << "Removing trailing zero pulse." << std::endl;
         pulses.pop_back();
     }
 
-    std::cout << "Generated " << pulses.size() << " pulses." << std::endl;
+    //std::cout << "Generated " << pulses.size() << " pulses." << std::endl;
 
     if (pulses.size() < 8) {
-        std::cout << "Padding to min 8 pulses to meet 16 byte minimum for fastlz." << std::endl;
+        //std::cout << "Padding to min 8 pulses to meet 16 byte minimum for fastlz." << std::endl;
         while (pulses.size() < 8) {
             pulses.push_back(0);
         }
@@ -238,11 +238,12 @@ int main(int argc, char* argv[]) {
 
     int comp_res = fastlz_compress_level(2, to_compress_bytes, pulses.size() * 2, compressed_bytes);
 
-    std::cout << "Original size: " << pulses.size() * 2 << " bytes, Compressed size: " << comp_res << " bytes." << std::endl;
+    //std::cout << "Original size: " << pulses.size() * 2 << " bytes, Compressed size: " << comp_res << " bytes." << std::endl;
 
     std::string_view view(reinterpret_cast<const char*>(compressed_bytes), comp_res);
     auto encoded = base64::to_base64(view);  
-    std::cout << "Base64 encoded compressed data: " << encoded << std::endl;
+    //std::cout << "Base64 encoded compressed data: " << encoded << std::endl;
+    std::cout << encoded << std::endl;
 
     return 0;
 }

@@ -117,11 +117,7 @@ The following heatpump models are supported (based on [arduino-heatpumpir](https
 
 This command generates an IR command for a Mitsubishi KJ model to turn on, set to cooling mode, fan speed 1, temperature 18°C, vertical vane up, horizontal vane middle.
 
-The program will output:
-- Model information
-- Number of pulses generated
-- Compression details
-- The base64-encoded compressed IR data
+The program will output the base64-encoded compressed IR data
 
 ### Output
 
